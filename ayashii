@@ -7,7 +7,7 @@ readonly API_URL='https://cjp.sbmr.in/api/raw'
 readonly ABOUT_URL='https://cjp.sbmr.in/about/'
 
 function _help() {
-    echo -e "
+	echo -e "
 ayashii -- AYASHII NIHONGO cli
 
 USAGE
@@ -29,45 +29,44 @@ API
 }
 
 function _err() {
-    echo -e "[\e[31m ERR \e[m] ${*}"
+	echo -e "[\e[31m ERR \e[m] ${*}"
 }
 
 function _test_cmd() {
-        for cmd in "${@}"; do
-        if ! command -v "${cmd}" &>/dev/null
-        then
-            _err "${cmd} command not found. Please install it."
-            exit 1
-        fi
-    done
+	for cmd in "${@}"; do
+		if ! command -v "${cmd}" &>/dev/null; then
+			_err "${cmd} command not found. Please install it."
+			exit 1
+		fi
+	done
 }
 
 function _encode() {
-    euarel --encode "${*}" || {
-        _err 'Encoding failed.'
-        exit 1
-    }
+	euarel --encode "${*}" || {
+		_err 'Encoding failed.'
+		exit 1
+	}
 }
 
 function _main() {
-    if [ $# -lt 1 ]; then
-        _help
-        return 0
-    fi
+	if [ $# -lt 1 ]; then
+		_help
+		return 0
+	fi
 
-    for arg in "${@}"; do
-        if [ "${arg}" = '--help' ]; then
-            _help
-            return 0
-        fi
-    done
+	for arg in "${@}"; do
+		if [ "${arg}" = '--help' ]; then
+			_help
+			return 0
+		fi
+	done
 
-    _test_cmd curl euarel
+	_test_cmd curl euarel
 
-    text="${*}"
-    encoded_text=$(_encode "${text}")
-    curl --silent "${API_URL}/${encoded_text}" --request GET
-    return 0
+	text="${*}"
+	encoded_text=$(_encode "${text}")
+	curl --silent "${API_URL}/${encoded_text}" --request GET
+	return 0
 }
 
 _main "$@"
