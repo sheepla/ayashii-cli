@@ -1,0 +1,74 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+readonly API_URL='https://cjp.sbmr.in/api/raw'
+readonly ABOUT_URL='https://cjp.sbmr.in/about/'
+
+function _help() {
+    echo -e "
+ayashii -- AYASHII NIHONGO cli
+
+USAGE
+    ayashii TEXT   # Convert from normal Japanese text to AYASHII NIHONGO.
+    ayashii --help # Show this help.
+
+EXAMPLE
+    $ ayashii これは正しい日本語です！
+    これは正レい日本语てず！
+
+DEPENDENCE
+    - curl    a url transfarer.
+    - euarel  a url encorder
+        https://github.com/octobanana/euarel
+API
+    Using this API. thanks!: ${API_URL}
+    To see more info about this API, visit: ${ABOUT_URL}
+    "
+}
+
+function _err() {
+    echo -e "[\e[31m ERR \e[m] ${*}"
+}
+
+function _test_cmd() {
+        for cmd in "${@}"; do
+        if ! command -v "${cmd}" &>/dev/null
+        then
+            _err "${cmd} command not found. Please install it."
+            exit 1
+        fi
+    done
+}
+
+function _encode() {
+    euarel --encode "${*}" || {
+        _err 'Encoding failed.'
+        exit 1
+    }
+}
+
+function _main() {
+    if [ $# -lt 1 ]; then
+        _help
+        return 0
+    fi
+
+    for arg in "${@}"; do
+        if [ "${arg}" = '--help' ]; then
+            _help
+            return 0
+        fi
+    done
+
+    _test_cmd curl euarel
+
+    text="${*}"
+    encoded_text=$(_encode "${text}")
+    curl --silent "${API_URL}/${encoded_text}" --request GET
+    return 0
+}
+
+_main "$@"
+exit "${?}"
