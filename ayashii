@@ -42,7 +42,7 @@ function _test_cmd() {
 }
 
 function _encode() {
-	euarel --encode "${*}" || {
+	euarel --encode <<< "${*}" || {
 		_err 'Encoding failed.'
 		exit 1
 	}
