@@ -28,8 +28,8 @@ API
 
 ### Depandences
 
-- curl: a url transfer.
-- (octobanana/euarel)[https://github.com/octobanana/euarel] : a url encorder
+- curl: a url transfer
+- [octobanana/euarel](https://github.com/octobanana/euarel) : a url encorder
 
 ### Install ayashii-cli
 
@@ -39,5 +39,6 @@ curl -O https://raw.githubusercontent.com/sheepla/ayashii-cli/master/ayashii && 
 
 ## Thanks
 
-This tool using this API. `https://cjp.sbmr.in/api/raw/{TEXT}`
-To see more info about this API, visit: (https://cjp.sbmr.in/about/)[https://cjp.sbmr.in/about/]
+This tool using this API. Thanks! 🥳 `https://cjp.sbmr.in/api/raw/{TEXT}`
+
+To see more info about this API, visit: [https://cjp.sbmr.in/about/](https://cjp.sbmr.in/about/)
