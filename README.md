@@ -21,6 +21,10 @@ DEPENDENCE
 API
     This tool using this API. thanks!:       https://cjp.sbmr.in/api/raw
     To see more info about this API, visit:  https://cjp.sbmr.in/about/
+
+REPOSITORY
+    https://github.com/sheepla/ayashii-cli
+    Author: sheepla  https://github.com/sheepla
 ```
 
 ## Installation

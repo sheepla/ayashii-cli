@@ -19,13 +19,18 @@ EXAMPLE
     これは正レい日本语てず！
 
 DEPENDENCE
-    - curl    a url transfarer
-    - euarel  a url encoder
-        https://github.com/octobanana/euarel
+    - curl  Required for API calls.
+    - nkf   Required for URL encoding.
+
 API
     Using this API. thanks!: ${API_URL}
     To see more info about this API, visit: ${ABOUT_URL}
-    "
+
+REPO
+    https://github.com/sheepla/ayashii-cli
+    Author: sheepla  https://github.com/sheepla
+    Licence: MIT
+"
 }
 
 function _err() {
