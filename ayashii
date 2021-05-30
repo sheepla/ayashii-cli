@@ -20,7 +20,7 @@ EXAMPLE
 
 DEPENDENCE
     - curl    a url transfarer.
-    - euarel  a url encorder
+    - euarel  a url encoder
         https://github.com/octobanana/euarel
 API
     Using this API. thanks!: ${API_URL}
