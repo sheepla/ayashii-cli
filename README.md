@@ -17,7 +17,7 @@ EXAMPLE
 
 DEPENDENCE
     - curl    a url transfarer.
-    - euarel  a url encorder
+    - euarel  a url encoder
         https://github.com/octobanana/euarel
 API
     Using this API. thanks!: https://cjp.sbmr.in/api/raw
@@ -29,7 +29,7 @@ API
 ### Depandences
 
 - curl: a url transfer
-- [octobanana/euarel](https://github.com/octobanana/euarel) : a url encorder
+- [octobanana/euarel](https://github.com/octobanana/euarel) : a url encoder
 
 ### Install ayashii-cli
 
