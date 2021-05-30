@@ -32,6 +32,8 @@ REPO
 
 ### Depandences
 
+The following command is required.
+
 - curl : Required for API calls
 - [nkf](https://osdn.net/projects/nkf/) : *Network Kanji Filter* Required for URL encoding.
 
@@ -41,6 +43,12 @@ Just download and add execution permission.
 
 ```bash
 curl -O https://raw.githubusercontent.com/sheepla/ayashii-cli/master/ayashii && chmod +x ayashii
+```
+
+### One Liner Edition
+
+```bash
+curl -s -X GET https://cjp.sbmr.in/api/raw/$(nkf -WwMQ <<< 'これは正しい日本語です' | sed 's/=$//g' | tr = % | tr -d \\n)
 ```
 
 ## Thanks
