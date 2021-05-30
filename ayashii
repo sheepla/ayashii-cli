@@ -27,9 +27,9 @@ API
     To see more info about this API, visit: ${ABOUT_URL}
 
 REPO
-    https://github.com/sheepla/ayashii-cli
+    Repository:      https://github.com/sheepla/ayashii-cli
     Author: sheepla  https://github.com/sheepla
-    Licence: MIT
+    Licence:         MIT
 "
 }
 
