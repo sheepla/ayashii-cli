@@ -51,12 +51,11 @@ function _encode() {
     nkf -WwMQ <<< "${*}" | sed 's/=$//g' | tr = % | tr -d '\n' || {
         _err 'Encoding failed.'
     }
-    #elif _test_cmd euarel
-    #    # https://qiita.com/ik-fib/items/cc983ca34600c2d633d5
-    #    euarel --encode <<< "${*}" || {
-    #        _err 'Encoding failed.'
-    #        exit 1
-    #    }
+    ## https://qiita.com/ik-fib/items/cc983ca34600c2d633d5
+    #euarel --encode <<< "${*}" || {
+    #    _err 'Encoding failed.'
+    #    exit 1
+    #}
 }
 
 function _main() {
