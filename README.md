@@ -16,22 +16,23 @@ EXAMPLE
     これは正レい日本语てず！
 
 DEPENDENCE
-    - curl    a url transfarer.
-    - euarel  a url encoder
-        https://github.com/octobanana/euarel
+    - curl  Required for API calls.
+    - nkf   Required for URL encoding.
 API
-    Using this API. thanks!: https://cjp.sbmr.in/api/raw
-    To see more info about this API, visit: https://cjp.sbmr.in/about/
+    This tool using this API. thanks!:       https://cjp.sbmr.in/api/raw
+    To see more info about this API, visit:  https://cjp.sbmr.in/about/
 ```
 
 ## Installation
 
 ### Depandences
 
-- curl: a url transfer
-- [octobanana/euarel](https://github.com/octobanana/euarel) : a url encoder
+- curl : Required for API calls
+- [nkf](https://osdn.net/projects/nkf/) : *Network Kanji Filter* Required for URL encoding.
 
 ### Install ayashii-cli
+
+Just download and add execution permission.
 
 ```bash
 curl -O https://raw.githubusercontent.com/sheepla/ayashii-cli/master/ayashii && chmod +x ayashii

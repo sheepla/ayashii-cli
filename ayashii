@@ -19,7 +19,7 @@ EXAMPLE
     これは正レい日本语てず！
 
 DEPENDENCE
-    - curl    a url transfarer.
+    - curl    a url transfarer
     - euarel  a url encoder
         https://github.com/octobanana/euarel
 API
@@ -36,16 +36,22 @@ function _test_cmd() {
 	for cmd in "${@}"; do
 		if ! command -v "${cmd}" &>/dev/null; then
 			_err "${cmd} command not found. Please install it."
-			exit 1
+			return 1
 		fi
 	done
 }
 
 function _encode() {
-	euarel --encode <<< "${*}" || {
-		_err 'Encoding failed.'
-		exit 1
-	}
+    # https://qiita.com/ik-fib/items/cc983ca34600c2d633d5
+    nkf -WwMQ <<< "${*}" | sed 's/=$//g' | tr = % | tr -d '\n' || {
+        _err 'Encoding failed.'
+    }
+    #elif _test_cmd euarel
+    #    # https://qiita.com/ik-fib/items/cc983ca34600c2d633d5
+    #    euarel --encode <<< "${*}" || {
+    #        _err 'Encoding failed.'
+    #        exit 1
+    #    }
 }
 
 function _main() {
@@ -61,7 +67,7 @@ function _main() {
 		fi
 	done
 
-	_test_cmd curl euarel
+	_test_cmd curl nkf || exit 1
 
 	text="${*}"
 	encoded_text=$(_encode "${text}")
