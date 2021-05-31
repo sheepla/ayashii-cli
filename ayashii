@@ -20,7 +20,6 @@ EXAMPLE
 
 DEPENDENCE
     - curl  Required for API calls.
-    - nkf   Required for URL encoding.
 
 API
     Using this API. thanks!: ${API_URL}
@@ -47,8 +46,7 @@ function _test_cmd() {
 }
 
 function _encode() {
-    # https://qiita.com/ik-fib/items/cc983ca34600c2d633d5
-    nkf -WwMQ <<< "${*}" | sed 's/=$//g' | tr = % | tr -d '\n' || {
+    echo -n "${*}" | od -tx1 -An | tr ' ' % | tr -d \\n || {
         _err 'Encoding failed.'
     }
 }
@@ -66,7 +64,7 @@ function _main() {
 		fi
 	done
 
-	_test_cmd curl nkf || exit 1
+	_test_cmd curl || exit 1
 
 	text="${*}"
 	encoded_text=$(_encode "${text}")

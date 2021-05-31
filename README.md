@@ -17,7 +17,6 @@ EXAMPLE
 
 DEPENDENCE
     - curl  Required for API calls.
-    - nkf   Required for URL encoding.
 API
     This tool using this API. thanks!:       https://cjp.sbmr.in/api/raw
     To see more info about this API, visit:  https://cjp.sbmr.in/about/
