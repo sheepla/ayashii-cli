@@ -33,8 +33,7 @@ REPO
 
 The following command is required.
 
-- curl : Required for API calls
-- [nkf](https://osdn.net/projects/nkf/) : *Network Kanji Filter* Required for URL encoding.
+- `curl` : Required for API calls
 
 ### Install ayashii-cli
 
