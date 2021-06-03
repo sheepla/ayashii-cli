@@ -46,7 +46,8 @@ curl -O https://raw.githubusercontent.com/sheepla/ayashii-cli/master/ayashii && 
 ### One Liner Edition
 
 ```bash
-curl -s -X GET https://cjp.sbmr.in/api/raw/$(nkf -WwMQ <<< 'これは正しい日本語です' | sed 's/=$//g' | tr = % | tr -d \\n)
+curl -s -X GET https://cjp.sbmr.in/api/raw/$(od -tx1 -An <<< "これは正しい日本語です！" | tr ' ' % | tr -d \\n )
+
 ```
 
 ## Thanks
