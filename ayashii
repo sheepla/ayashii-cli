@@ -66,7 +66,8 @@ function _main() {
 
 	text="${*}"
 	encoded_text=$(_encode "${text}")
-	curl --silent "${API_URL}/${encoded_text}" --request GET
+	curl --silent "${API_URL}/${encoded_text}" --request GET |
+        awk 4 # Add a line break at the end
 	return 0
 }
 
