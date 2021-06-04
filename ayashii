@@ -46,9 +46,7 @@ function _test_cmd() {
 }
 
 function _encode() {
-    echo -n "${*}" | od -tx1 -An | tr ' ' % | tr -d \\n || {
-        _err 'Encoding failed.'
-    }
+    echo -n "${*}" | od -tx1 -An | tr ' ' % | tr -d \\n
 }
 
 function _main() {
