@@ -24,7 +24,7 @@ API
 REPO
     Repository:      https://github.com/sheepla/ayashii-cli
     Author: sheepla  https://github.com/sheepla
-    Licence:         MIT
+    License:         MIT
 ```
 
 ## Installation
