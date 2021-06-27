@@ -5,11 +5,12 @@
 ## Usage
 
 ```
-ayashii -- AYASHII NIHONGO cli
+ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
-    ayashii TEXT   # Convert from normal Japanese text to AYASHII NIHONGO.
-    ayashii --help # Show this help.
+    ayashii TEXT        # from arguments
+    echo TEXT | ayashii # from stdin
+    ayashii --help      # Show this help.
 
 EXAMPLE
     $ ayashii これは正しい日本語です！

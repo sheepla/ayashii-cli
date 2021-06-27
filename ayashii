@@ -5,17 +5,22 @@ set -o nounset
 
 readonly API_URL='https://cjp.sbmr.in/api/raw'
 readonly ABOUT_URL='https://cjp.sbmr.in/about/'
+readonly AUTHOR_URL='https://github.com/sheepla'
+readonly REPO_URL="${AUTHOR_URL}/ayashii-cli"
 
 function _help() {
 	echo -e "
-ayashii -- AYASHII NIHONGO cli
+ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
-    ayashii TEXT   # Convert from normal Japanese text to AYASHII NIHONGO.
-    ayashii --help # Show this help.
+    ayashii TEXT        # from arguments
+    echo TEXT | ayashii # from stdin
+    ayashii --help      # Show this help.
 
 EXAMPLE
     $ ayashii これは正しい日本語です！
+    これは正レい日本语てず！
+    $ echo これは正しい日本語です！ | ayashii
     これは正レい日本语てず！
 
 DEPENDENCE
@@ -26,8 +31,8 @@ API
     To see more info about this API, visit: ${ABOUT_URL}
 
 REPO
-    Repository:      https://github.com/sheepla/ayashii-cli
-    Author: sheepla  https://github.com/sheepla
+    Repository:      ${REPO_URL}
+    Author: sheepla  ${AUTHOR_URL}
     Licence:         MIT
 "
 }
