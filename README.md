@@ -15,18 +15,20 @@ USAGE
 EXAMPLE
     $ ayashii これは正しい日本語です！
     これは正レい日本语てず！
+    $ echo これは正しい日本語です！ | ayashii
+    これは正レい日本语てず！
 
 DEPENDENCE
     - curl  Required for API calls.
 
 API
-    This tool using this API. thanks!:       https://cjp.sbmr.in/api/raw
-    To see more info about this API, visit:  https://cjp.sbmr.in/about/
+    Using this API. thanks!: https://cjp.sbmr.in/api/raw
+    To see more info about this API, visit: https://cjp.sbmr.in/about/
 
 REPO
     Repository:      https://github.com/sheepla/ayashii-cli
     Author: sheepla  https://github.com/sheepla
-    License:         MIT
+    Licence:         MIT
 ```
 
 ## Installation
