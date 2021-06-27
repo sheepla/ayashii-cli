@@ -49,7 +49,20 @@ function _encode() {
 	echo -n "${*}" | od -tx1 -An | tr ' ' % | tr -d \\n
 }
 
+function _to_ayashii() {
+	text="${*}"
+    curl --silent "${API_URL}/$(_encode "${text}")" --request GET |
+		awk 4 # Add a line break at the end
+}
+
 function _main() {
+
+    if [ -p /dev/stdin ]; then
+        _test_cmd curl || exit 1
+        _to_ayashii "$(cat /dev/stdin)"
+        return "${?}"
+    fi
+
 	if [ $# -lt 1 ]; then
 		_help
         _err "Must require arguments..."
@@ -64,12 +77,8 @@ function _main() {
 	done
 
 	_test_cmd curl || exit 1
-
-	text="${*}"
-	encoded_text=$(_encode "${text}")
-	curl --silent "${API_URL}/${encoded_text}" --request GET |
-		awk 4 # Add a line break at the end
-	return 0
+    _to_ayashii "${*}"
+    return "${?}"
 }
 
 _main "$@"
