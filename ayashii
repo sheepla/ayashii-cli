@@ -61,14 +61,13 @@ function _to_ayashii() {
 }
 
 function _main() {
-
 	if [ -p /dev/stdin ]; then
 		_test_cmd curl || exit 1
 		_to_ayashii "$(cat /dev/stdin)"
 		return "${?}"
 	fi
 
-	if [ $# -lt 1 ]; then
+	if [ "${#}" -lt 1 ]; then
 		_help
 		_err "Must require arguments..."
 		return 1
