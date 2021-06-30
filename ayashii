@@ -57,7 +57,8 @@ function _encode() {
 function _to_ayashii() {
 	text="${*}"
 	curl --silent "${API_URL}/$(_encode "${text}")" --request GET |
-		awk 4 # Add a line break at the end
+		awk 4 | # Add a line break at the end
+        sed -e "s_%3a_:_g" -e "s_%2f_/_g"
 }
 
 function _main() {
