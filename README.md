@@ -1,4 +1,9 @@
-# ayashii-cli
+# 🗾 ayashii-cli
+
+<div align="right">
+    <img src="https://img.shields.io/static/v1?label=Language&message=shell&color=blue&style=flat-square"/>
+    <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=flat-square"/>
+</div>
 
 通常ゐ亍キヌ卜を怪レい日本语に変换レまず.
 
