@@ -10,7 +10,6 @@
 ## Usage
 
 ```
-
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
@@ -28,7 +27,6 @@ REPO
     Repository:      https://github.com/sheepla/ayashii-cli
     Author: sheepla  https://github.com/sheepla
     Licence:         MIT
-
 ```
 
 ## Installation
