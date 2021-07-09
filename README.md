@@ -27,6 +27,10 @@ REPO
     Repository:      https://github.com/sheepla/ayashii-cli
     Author:          sheepla (https://github.com/sheepla)
     Licence:         MIT
+
+DICT
+    This tool using this dictionaries. thanks!
+        https://github.com/Submarinonline/cjp.js/tree/master/dict
 ```
 
 ## Installation

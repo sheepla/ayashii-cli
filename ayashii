@@ -5,6 +5,7 @@ set -o nounset
 
 readonly AUTHOR_URL='https://github.com/sheepla'
 readonly REPO_URL="${AUTHOR_URL}/ayashii-cli"
+readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
 
 function _help() {
     echo -e "
@@ -25,6 +26,10 @@ REPO
     Repository:      ${REPO_URL}
     Author:          sheepla (${AUTHOR_URL})
     Licence:         MIT
+
+DICT
+    This tool using this dictionaries. thanks!
+    ${DICT_URL}
 "
 }
 
