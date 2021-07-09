@@ -23,7 +23,7 @@ EXAMPLE
 
 REPO
     Repository:      ${REPO_URL}
-    Author: sheepla  ${AUTHOR_URL}
+    Author:          sheepla (${AUTHOR_URL})
     Licence:         MIT
 "
 }

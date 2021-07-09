@@ -25,7 +25,7 @@ EXAMPLE
 
 REPO
     Repository:      https://github.com/sheepla/ayashii-cli
-    Author: sheepla  https://github.com/sheepla
+    Author:          sheepla (https://github.com/sheepla)
     Licence:         MIT
 ```
 
