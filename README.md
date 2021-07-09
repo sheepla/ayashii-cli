@@ -9,7 +9,7 @@
 
 ## Usage
 
-```
+```bash
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE

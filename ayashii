@@ -7,7 +7,7 @@ readonly AUTHOR_URL='https://github.com/sheepla'
 readonly REPO_URL="${AUTHOR_URL}/ayashii-cli"
 
 function _help() {
-	echo -e "
+    echo -e "
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
@@ -29,12 +29,12 @@ REPO
 }
 
 function _err() {
-	echo -e "[\e[31m ERR \e[m] ${*}"
+    echo -e "[\e[31m ERR \e[m] ${*}"
 }
 
 function _to_ayashii() {
-	text="${*}"
-	echo "$text" | sed '
+    text="${*}"
+    echo "$text" | sed '
     # source: https://github.com/Submarinonline/cjp.js/tree/master/dict
 
     # emoji.json
@@ -310,29 +310,29 @@ function _to_ayashii() {
     y/鵷鵾鶄鶡鶹鶿鷖鷚鷴鸂鸝麽黿齕国悪真実値楽/鹓鹍䴖鹖鹠鹚鹥鹨鹇㶉鹂么鼋龁國恶眞实價乐/
     y/歴/历/
     '
-    }
+}
 
-    function _main() {
-    	if [ -p /dev/stdin ]; then
-    		_to_ayashii "$(cat /dev/stdin)"
-		return "${?}"
-	fi
+function _main() {
+    if [ -p /dev/stdin ]; then
+        _to_ayashii "$(cat /dev/stdin)"
+        return "${?}"
+    fi
 
-	if [ "${#}" -lt 1 ]; then
-		_help
-		_err "Must require arguments..."
-		return 1
-	fi
+    if [ "${#}" -lt 1 ]; then
+        _help
+        _err "Must require arguments..."
+        return 1
+    fi
 
-	for arg in "${@}"; do
-		if [ "${arg}" = '--help' ]; then
-			_help
-			return 0
-		fi
-	done
+    for arg in "${@}"; do
+        if [ "${arg}" = '--help' ]; then
+            _help
+            return 0
+        fi
+    done
 
-	_to_ayashii "${*}"
-	return "${?}"
+    _to_ayashii "${*}"
+    return "${?}"
 }
 
 _main "$@"
