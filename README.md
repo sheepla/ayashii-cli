@@ -9,7 +9,7 @@
 
 ## Usage
 
-```
+```bash
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
@@ -23,44 +23,22 @@ EXAMPLE
     $ echo これは正しい日本語です！ | ayashii
     これは正レい日本语てず！
 
-DEPENDENCE
-    - curl  Required for API calls.
-
-API
-    Using this API. thanks!: https://cjp.sbmr.in/api/raw
-    To see more info about this API, visit: https://cjp.sbmr.in/about/
-
 REPO
     Repository:      https://github.com/sheepla/ayashii-cli
-    Author: sheepla  https://github.com/sheepla
+    Author:          sheepla (https://github.com/sheepla)
     Licence:         MIT
 ```
 
 ## Installation
-
-### Depandences
-
-The following command is required.
-
-- `curl` : Required for API calls
 
 ### Install ayashii-cli
 
 Just download and add execution permission.
 
 ```bash
-curl -O https://raw.githubusercontent.com/sheepla/ayashii-cli/master/ayashii && chmod +x ayashii
-```
-
-### One Liner Edition
-
-```bash
-curl -s -X GET https://cjp.sbmr.in/api/raw/$(od -tx1 -An <<< "これは正しい日本語です！" | tr ' ' % | tr -d \\n )
-
+curl -L https://git.io/JcdpT -o ayashii && chmod +x ayashii
 ```
 
 ## Thanks
 
-This tool using this API. Thanks! 🥳 `https://cjp.sbmr.in/api/raw/{TEXT}`
-
-To see more info about this API, visit: [https://cjp.sbmr.in/about/](https://cjp.sbmr.in/about/)
+This tool using this dictionaries. Thanks! 🥳 [cjp.js/dict at master · Submarinonline/cjp.js](https://github.com/Submarinonline/cjp.js/tree/master/dict)

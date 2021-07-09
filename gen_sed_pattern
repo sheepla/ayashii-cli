@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Usage: ./gen_sed_pattern > ayashii.sed
+# shellcheck disable=SC2016
+
+set -e
+
+command -v git jq ruby >/dev/null || {
+    echo 'install requirements: git jq ruby' >&2
+    exit 1
+}
+
+[ -d 'cjp.js/.git' ] || {
+    git clone --depth 1 --quiet https://github.com/Submarinonline/cjp.js cjp.js
+}
+
+pushd 'cjp.js/dict' >/dev/null
+
+echo '# source: https://github.com/Submarinonline/cjp.js/tree/master/dict'
+
+echo
+
+echo '# emoji.json'
+sed 's!:flag_jp:!🇯🇵!g;s!:flag_cn:!🇨🇳!g;s!:crossed_flags:!🎌!g;s!:flag_au:!🇦🇺!g;s!:flag_kr:!🇰🇷!g' emoji.json |
+    jq -r 'keys[] as $k|"s/\($k)/\(.[$k])/g"'
+
+echo
+
+echo '# common.json'
+jq -r 'keys[] as $k|"s/\($k)/\(.[$k])/g"' common.json
+
+echo
+
+echo '# propernoun.json'
+jq -r 'keys[] as $k|"s/\($k)/\(.[$k])/g"' propernoun.json
+
+echo
+
+echo '# kana.json'
+grep -E '\(|\\"|゜|゚' kana.json |
+    sed -e '1i{' -e '$s/,$//;$a}' |
+    jq -r 'keys[] as $k|"s/\($k)/\(.[$k])/g"'
+
+echo
+
+grep -v -E '\(|\\"|゜|゚' kana.json | awk -F'[:,"]' 'NF==7{print $2,$5}' |
+    ruby -e'`dd 2>/dev/null`.split(?\n).map(&:split).each_slice(10){
+    puts "y/" + _1.map{|i|i[0]}*"" + ?/ + _1.map{|i|i[1]}*"" + ?/
+}'
+
+echo
+
+echo '# kanji.json'
+awk -F'[:,"]' 'NF==7{print$2,$5}' kanji.json |
+    ruby -e'`dd 2>/dev/null`.split(?\n).map(&:split).each_slice(20){
+    puts "y/" + _1.map{|i|i[0]}*"" + ?/ + _1.map{|i|i[1]}*"" + ?/
+}'
+
+popd >/dev/null # && rm -rf cjp.js
