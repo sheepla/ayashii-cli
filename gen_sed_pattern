@@ -20,7 +20,7 @@ echo '# source: https://github.com/Submarinonline/cjp.js/tree/master/dict'
 echo
 
 echo '# emoji.json'
-sed -i 's!:flag_jp:!🇯🇵!g;s!:flag_cn:!🇨🇳!g;s!:crossed_flags:!🎌!g;s!:flag_au:!🇦🇺!g;s!:flag_kr:!🇰🇷!g' emoji.json |
+sed 's!:flag_jp:!🇯🇵!g;s!:flag_cn:!🇨🇳!g;s!:crossed_flags:!🎌!g;s!:flag_au:!🇦🇺!g;s!:flag_kr:!🇰🇷!g' emoji.json |
     jq -r 'keys[] as $k|"s/\($k)/\(.[$k])/g"'
 
 echo

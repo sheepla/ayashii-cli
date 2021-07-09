@@ -1,6 +1,10 @@
 # source: https://github.com/Submarinonline/cjp.js/tree/master/dict
 
 # emoji.json
+s/🇦🇺/🇨🇳/g
+s/🇯🇵/🇨🇳/g
+s/🇰🇷/🇨🇳/g
+s/🎌/🇨🇳/g
 
 # common.json
 s/(?<!おやすみ|ごめん)なさい/（しなさい）/g
