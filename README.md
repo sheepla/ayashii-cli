@@ -30,7 +30,7 @@ REPO
 
 DICT
     This tool using this dictionaries. thanks!
-        https://github.com/Submarinonline/cjp.js/tree/master/dict
+    https://github.com/Submarinonline/cjp.js/tree/master/dict
 ```
 
 ## Installation
