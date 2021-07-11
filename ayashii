@@ -29,7 +29,7 @@ REPO
     Licence:         MIT
 
 DICT
-    This tool using this dictionaries. thanks!
+    This tool utilises this dictionaries. thanks!
     ${DICT_URL}
 "
 }

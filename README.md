@@ -30,20 +30,28 @@ REPO
     Licence:         MIT
 
 DICT
-    This tool using this dictionaries. thanks!
+    This tool utilises this dictionaries. thanks!
     https://github.com/Submarinonline/cjp.js/tree/master/dict
 ```
 
 ## Installation
 
-### Install ayashii-cli
-
-Just download and add execution permission.
+### Local install
 
 ```bash
 curl -L https://git.io/JcdpT -o ayashii && chmod +x ayashii
 ```
 
+### Global install
+
+To enables to run `ayashii` command anywhere.
+
+```bash
+curl -L https://git.io/JcdpT -o ayashii && sudo install -m 755 ayashii /usr/local/bin/ayashii
+```
+
 ## Thanks
 
-This tool using this dictionaries. Thanks! 🥳 [cjp.js/dict at master · Submarinonline/cjp.js](https://github.com/Submarinonline/cjp.js/tree/master/dict)
+This tool utilises this dictionaries. Thanks! 🥳
+
+[cjp.js/dict at master · Submarinonline/cjp.js](https://github.com/Submarinonline/cjp.js/tree/master/dict)
