@@ -12,16 +12,21 @@ function _help() {
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
-    ayashii TEXT        # read from arguments
-    echo TEXT | ayashii # read from pipe
-    ayashii -s <<< TEXT # read from stdin
-    ayashii --help      # show this help
+    ayashii [OPTIONS] TEXT...
+        ayashii TEXT        # read from arguments
+        echo TEXT | ayashii # read from pipe
+        ayashii -s <<< TEXT # read from stdin
+        ayashii --help      # show this help
 
-EXAMPLE
+EXAMPLES
     $ ayashii これは正しい日本語です！
     これは正レい日本语てず！
     $ echo これは正しい日本語です！ | ayashii
     これは正レい日本语てず！
+
+OPTIONS
+    -s      read from stdin
+    --help  show this help
 
 REPO
     Repository:      ${REPO_URL}
