@@ -13,9 +13,10 @@
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
-    ayashii TEXT        # from arguments
-    echo TEXT | ayashii # from stdin
-    ayashii --help      # Show this help.
+    ayashii TEXT        # read from arguments
+    echo TEXT | ayashii # read from pipe
+    ayashii -s <<< TEXT # read from stdin
+    ayashii --help      # show this help
 
 EXAMPLE
     $ ayashii これは正しい日本語です！

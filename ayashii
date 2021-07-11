@@ -12,9 +12,10 @@ function _help() {
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
-    ayashii TEXT        # from arguments
-    echo TEXT | ayashii # from stdin
-    ayashii --help      # Show this help.
+    ayashii TEXT        # read from arguments
+    echo TEXT | ayashii # read from pipe
+    ayashii -s <<< TEXT # read from stdin
+    ayashii --help      # show this help
 
 EXAMPLE
     $ ayashii これは正しい日本語です！
@@ -38,8 +39,7 @@ function _err() {
 }
 
 function _to_ayashii() {
-    text="${*}"
-    echo "$text" | sed '
+    sed '
     # source: https://github.com/Submarinonline/cjp.js/tree/master/dict
 
     # emoji.json
@@ -322,26 +322,33 @@ function _to_ayashii() {
 }
 
 function _main() {
-    if [ -p /dev/stdin ]; then
-        _to_ayashii "$(cat /dev/stdin)"
-        return "${?}"
-    fi
+    for arg in "${@}"; do
+        case "${arg}" in
+        -h | --help)
+            _help
+            return 0
+            ;;
+        -s | --stdin)
+            # From interpreter
+            _to_ayashii
+            return "${?}"
+        esac
+    done
 
-    if [ "${#}" -lt 1 ]; then
+    if [ -p /dev/stdin ]
+    then
+        # From pipe
+        _to_ayashii < /dev/stdin
+        return "${?}"
+    elif [ "${#}" -eq 0 ]; then
         _help
         _err "Must require arguments..."
         return 1
+    else
+        # From arg
+        _to_ayashii <<<"$@"
+        return "${?}"
     fi
-
-    for arg in "${@}"; do
-        if [ "${arg}" = '--help' ]; then
-            _help
-            return 0
-        fi
-    done
-
-    _to_ayashii "${*}"
-    return "${?}"
 }
 
 _main "$@"
