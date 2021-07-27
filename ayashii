@@ -3,8 +3,9 @@
 set -o errexit
 set -o nounset
 
-readonly AUTHOR_URL='https://github.com/sheepla'
-readonly REPO_URL="${AUTHOR_URL}/ayashii-cli"
+readonly GITHUB_URL="https://github.com"
+readonly AUTHORS=("sheepla" "eggplants")
+readonly REPO_URL="${GITHUB_URL}/${AUTHORS[0]}/ayashii-cli"
 readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
 
 function _help() {
@@ -32,7 +33,8 @@ OPTIONS
 
 REPO
     Repository:      ${REPO_URL}
-    Author:          sheepla (${AUTHOR_URL})
+    Author:          ${AUTHORS[0]} (${GITHUB_URL}/${AUTHORS[0]})
+                     ${AUTHORS[1]} (${GITHUB_URL}/${AUTHORS[1]})
     Licence:         MIT
 
 DICT

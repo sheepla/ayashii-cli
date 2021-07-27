@@ -34,6 +34,7 @@ OPTIONS
 REPO
     Repository:      https://github.com/sheepla/ayashii-cli
     Author:          sheepla (https://github.com/sheepla)
+                     eggplants (https://github.com/eggplants)
     Licence:         MIT
 
 DICT
