@@ -3,15 +3,7 @@
 set -o errexit
 set -o nounset
 
-function _help() {
-    readonly GITHUB_URL="https://github.com"
-    readonly AUTHORS=("sheepla" "eggplants")
-    readonly REPO_URL="${GITHUB_URL}/${AUTHORS[0]}/ayashii-cli"
-    readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
-
-    echo -e "
-ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
-
+readonly USAGE="
 USAGE
     ayashii [OPTIONS] TEXT...
         ayashii TEXT        # read from arguments
@@ -30,12 +22,25 @@ EXAMPLES
 OPTIONS
     -s --stdin  read from stdin
     --help      show this help
+"
+
+function _help() {
+    readonly GITHUB_URL="https://github.com"
+    readonly AUTHORS=("sheepla" "eggplants")
+    readonly REPO_URL="${GITHUB_URL}/${AUTHORS[0]}/ayashii-cli"
+    readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
+    readonly LICENSE="MIT"
+
+    echo -e "
+ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
+
+${USAGE}
 
 REPO
     Repository:      ${REPO_URL}
     Authors:         ${AUTHORS[0]} (${GITHUB_URL}/${AUTHORS[0]})
                      ${AUTHORS[1]} (${GITHUB_URL}/${AUTHORS[1]})
-    Licence:         MIT
+    Licence:         ${LICENSE}
 
 DICT
     This tool utilises this dictionaries. thanks!
@@ -350,7 +355,7 @@ function _main() {
         _to_ayashii </dev/stdin
         return "${?}"
     elif [ "${#}" -eq 0 ]; then
-        _help
+        echo -e "${USAGE}"
         _err "Must require arguments..."
         return 1
     else
