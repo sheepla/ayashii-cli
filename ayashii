@@ -50,7 +50,7 @@ DICT
 }
 
 function _err() {
-    echo -e "[\e[31m ERR \e[m] ${*}"
+    echo -e "[\e[31m ERR \e[m] ${*}" >&2
 }
 
 function _to_ayashii() {
@@ -356,7 +356,7 @@ function _main() {
         _to_ayashii </dev/stdin
         return "${?}"
     elif [ "${#}" -eq 0 ]; then
-        echo -e "${USAGE}"
+        echo -e "${USAGE}" >&2
         _err "Must require arguments..."
         return 1
     else
