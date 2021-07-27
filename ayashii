@@ -8,7 +8,7 @@ readonly REPO_URL="${AUTHOR_URL}/ayashii-cli"
 readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
 
 function _help() {
-    echo -e "
+	echo -e "
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
@@ -40,11 +40,11 @@ DICT
 }
 
 function _err() {
-    echo -e "[\e[31m ERR \e[m] ${*}"
+	echo -e "[\e[31m ERR \e[m] ${*}"
 }
 
 function _to_ayashii() {
-    sed '
+	sed '
     # source: https://github.com/Submarinonline/cjp.js/tree/master/dict
 
     # emoji.json
@@ -327,33 +327,33 @@ function _to_ayashii() {
 }
 
 function _main() {
-    for arg in "${@}"; do
-        case "${arg}" in
-        -h | --help)
-            _help
-            return 0
-            ;;
-        -s | --stdin)
-            # From interpreter
-            _to_ayashii
-            return "${?}"
-        esac
-    done
+	for arg in "${@}"; do
+		case "${arg}" in
+		-h | --help)
+			_help
+			return 0
+			;;
+		-s | --stdin)
+			# From interpreter
+			_to_ayashii
+			return "${?}"
+			;;
+		esac
+	done
 
-    if [ -p /dev/stdin ]
-    then
-        # From pipe
-        _to_ayashii < /dev/stdin
-        return "${?}"
-    elif [ "${#}" -eq 0 ]; then
-        _help
-        _err "Must require arguments..."
-        return 1
-    else
-        # From arg
-        _to_ayashii <<<"$@"
-        return "${?}"
-    fi
+	if [ -p /dev/stdin ]; then
+		# From pipe
+		_to_ayashii </dev/stdin
+		return "${?}"
+	elif [ "${#}" -eq 0 ]; then
+		_help
+		_err "Must require arguments..."
+		return 1
+	else
+		# From arg
+		_to_ayashii <<<"$@"
+		return "${?}"
+	fi
 }
 
 _main "$@"
