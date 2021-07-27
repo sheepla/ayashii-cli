@@ -28,8 +28,8 @@ EXAMPLES
     これは正レい日本语てず！
 
 OPTIONS
-    -s      read from stdin
-    --help  show this help
+    -s --stdin  read from stdin
+    --help      show this help
 
 REPO
     Repository:      ${REPO_URL}

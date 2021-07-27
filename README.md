@@ -9,7 +9,7 @@
 
 ## Usage
 
-```bash
+```
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 USAGE
@@ -28,8 +28,8 @@ EXAMPLES
     これは正レい日本语てず！
 
 OPTIONS
-    -s      read from stdin
-    --help  show this help
+    -s --stdin  read from stdin
+    --help      show this help
 
 REPO
     Repository:      https://github.com/sheepla/ayashii-cli
@@ -63,3 +63,4 @@ curl -L https://git.io/JcdpT -o ayashii && sudo install -m 755 ayashii /usr/loca
 This tool utilises this dictionaries. Thanks! 🥳
 
 [cjp.js/dict at master · Submarinonline/cjp.js](https://github.com/Submarinonline/cjp.js/tree/master/dict)
+
