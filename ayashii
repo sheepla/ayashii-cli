@@ -4,10 +4,10 @@ set -o errexit
 set -o nounset
 
 function _help() {
-    readonly GITHUB_URL="https://github.com"
-    readonly AUTHORS=("sheepla" "eggplants")
-    readonly REPO_URL="${GITHUB_URL}/${AUTHORS[0]}/ayashii-cli"
-    readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
+	readonly GITHUB_URL="https://github.com"
+	readonly AUTHORS=("sheepla" "eggplants")
+	readonly REPO_URL="${GITHUB_URL}/${AUTHORS[0]}/ayashii-cli"
+	readonly DICT_URL="https://github.com/Submarinonline/cjp.js/tree/master/dict"
 
 	echo -e "
 ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
