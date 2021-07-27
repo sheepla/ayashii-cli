@@ -3,9 +3,10 @@
 set -o errexit
 set -o nounset
 
+readonly THIS_CMD="${0##*/}"
 readonly USAGE="
 USAGE
-    ayashii [OPTIONS] TEXT...
+    ${THIS_CMD} [OPTIONS] TEXT...
         ayashii TEXT        # read from arguments
         echo TEXT | ayashii # read from pipe
         ayashii -s <<< TEXT # read from stdin
@@ -32,7 +33,7 @@ function _help() {
     readonly LICENSE="MIT"
 
     echo -e "
-ayashii -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
+${THIS_CMD} -- AYASHII NIHONGO CLI: Convert from normal Japanese text to AYASHII NIHONGO.
 
 ${USAGE}
 
