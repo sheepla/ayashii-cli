@@ -33,7 +33,7 @@ OPTIONS
 
 REPO
     Repository:      ${REPO_URL}
-    Authors:          ${AUTHORS[0]} (${GITHUB_URL}/${AUTHORS[0]})
+    Authors:         ${AUTHORS[0]} (${GITHUB_URL}/${AUTHORS[0]})
                      ${AUTHORS[1]} (${GITHUB_URL}/${AUTHORS[1]})
     Licence:         MIT
 
