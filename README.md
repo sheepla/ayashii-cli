@@ -24,6 +24,8 @@ EXAMPLES
     これは正レい日本语てず！
     $ echo これは正しい日本語です！ | ayashii
     これは正レい日本语てず！
+    $ ayashii -s <<< これは正しい日本語です！
+    これは正レい日本语てず！
 
 OPTIONS
     -s      read from stdin
