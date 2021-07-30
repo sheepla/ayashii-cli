@@ -41,7 +41,7 @@ REPO
     Repository:      ${REPO_URL}
     Authors:         ${AUTHORS[0]} (${GITHUB_URL}/${AUTHORS[0]})
                      ${AUTHORS[1]} (${GITHUB_URL}/${AUTHORS[1]})
-    Licence:         ${LICENSE}
+    License:         ${LICENSE}
 
 DICT
     This tool utilises this dictionaries. thanks!

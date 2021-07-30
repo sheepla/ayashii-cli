@@ -35,7 +35,7 @@ REPO
     Repository:      https://github.com/sheepla/ayashii-cli
     Authors:         sheepla (https://github.com/sheepla)
                      eggplants (https://github.com/eggplants)
-    Licence:         MIT
+    License:         MIT
 
 DICT
     This tool utilises this dictionaries. thanks!
